@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 
 function App() {
 
-const [to,setTo]=useState("hi")
+const [to,setTo]=useState("es")
 const [from,setFrom]=useState("en")
 const [input,setInput]=useState("")
 const [output,setOutput]=useState("")
@@ -21,14 +21,13 @@ function translat(){
   })
   console.log(output)
   let utterance;
-  utterance=new SpeechSynthesisUtterance(output);
-  utterance.lang='hi';
+ 
   // speechSynthesis.speak(utterance);
 }
 function spk(){
   let utterance;
-  utterance=new SpeechSynthesisUtterance(input);
-  utterance.lang='en';
+  utterance=new SpeechSynthesisUtterance(output);
+  utterance.lang='es';
   speechSynthesis.speak(utterance);
 
 }
@@ -53,7 +52,7 @@ function spk(){
 </div>
 
 <div>
-<Button style={{marginLeft:"120px"}} id='Tbtn' class='Tbtn' name='Tbtn' onClick={translat}>Translate to Hindi</Button>
+<Button style={{marginLeft:"120px"}} id='Tbtn' class='Tbtn' name='Tbtn' onClick={translat}>Translate to Spanish</Button>
 </div>
 <div>
 <textarea cols="50" rows="1" value={output} ></textarea>
